@@ -5,7 +5,35 @@ export enum StrategySection {
   COPYWRITING = 'COPYWRITING',
   VISUALS = 'VISUALS',
   ROADMAP = 'ROADMAP',
-  ANALYTICS = 'ANALYTICS'
+  ANALYTICS = 'ANALYTICS',
+  MARKET = 'MARKET',
+  ADVISOR = 'ADVISOR',
+  VAULT = 'VAULT'
+}
+
+export interface VaultEntry {
+  id: string;
+  user_id?: string;
+  timestamp: number;
+  category: string;
+  title: string;
+  content: string;
+}
+
+export interface User {
+  id: string;
+  email: string;
+  name: string;
+  companyName?: string;
+  industry?: string;
+}
+
+export interface ChatMessage {
+  id: string;
+  user_id: string;
+  role: 'user' | 'assistant';
+  content: string;
+  created_at: string;
 }
 
 export interface SitemapNode {
@@ -24,11 +52,6 @@ export interface HeadlineOption {
   type: string;
   h1: string;
   h2: string;
-}
-
-export interface User {
-  email: string;
-  name: string;
 }
 
 export interface TutorialStep {
